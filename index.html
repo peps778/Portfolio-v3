@@ -2,275 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/src/assets/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./src/custom.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="./src/config.js"></script>
-
-    <title>Paul Jhon Magbanua</title>
+    <link rel="icon" href="./src/assets/coming-soon.png" type="image/x-icon">
+    <title>Coming Soon!</title>
 </head>
 <body>
-     <!-- Navigation Bar -->
-    <nav class="sticky top-0 bg-white border-gray-200 dark:bg-slate-900">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://magbanua-pauljhon.website" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="./src/assets/nav-bar-icon.png" class="h-8" alt="Flowbite Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Paul Jhon Magbanua</span>
-          </a>
-          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-              </svg>
-          </button>
-          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-slate-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a href="#hero" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-              </li>
-              <li>
-                <a href="#secondSection" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Skills</a>
-              </li>
-              <li>
-                <a href="#thirdSection" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Experience</a>
-              </li>
-              <li>
-                <a href="#fourthSection" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Education</a>
-              </li>
-              <li>
-            <a href="#fifthSection" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-              </li>
-            </ul>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+h1 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  color: #333;
+  -webkit-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+  -moz-text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.7);
+  word-spacing: 16px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #222;
+  text-shadow: 0 0 40px #FFFFFF, 0 0 30px #FFFFFF, 0 0 20px #FFFFFF;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: url('');
+  background-size: cover;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: table;
+}
+
+.content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.item {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 8px;
+}
+
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 6em;
+  }
+  p {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+    </style>
+    <div class="container">
+        <div class="wrapper">
+          <div class="content">
+            <div class="item">
+              <!-- Place your content here to have it be centered vertically and horizontally  -->
+              <h1>COMING SOON</h1>
+              <p>This website is under maintenance.</p>
+                <p><i>for inquiries, email me at magbanuatx56@gmail.com<i><p>
+              <p>- Paul Jhon Magbanua</p>
+            </div>
           </div>
         </div>
-      </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="grid grid-cols-1 md:grid-cols-2 content-evenly lg:h-screen md:h-scren max-sm:h-fit">
-
-        <!-- TEXT BOX (Will be below image on mobile, left on desktop) -->
-        <div class="text-black flex items-center justify-center  max-sm:order-2 sm:order-2 md:order-2 lg:order-1">
-            <div class="ml-10"> 
-                <h1 class="font-bold text-7xl">
-                    Hi, I’m Paul
-                </h1>
-                <h4 class="font-bold text-2xl mt-4">
-                    Web Developer | CRM Manager | Marketing Specialist
-                </h4>
-                <p class="text-lg mt-4">
-                    Passionate about crafting innovative web solutions and delivering seamless user experiences. With a solid background in web development and technical support, I thrive on transforming ideas into reality. Let’s build something amazing together!
-                </p>
-
-                <button class="bg-slate-900 hover:bg-slate-500 py-1 px-2 rounded-sm my-4 flex items-center justify-center">
-                    <a class="text-white text-center" href="#">Download CV!</a>
-                </button>
-            </div>
-        </div>
-     
-        <!-- IMAGE BOX (Will be on top in mobile, right on desktop) -->
-        <div class=" text-white flex items-center justify-center ma x-sm:order-1 sm:order-1 md:order-1 lg:order-2">
-  
-           <div>
-            <img src="./src/assets/hero-icon.png" class="">
-           </div>
-        </div>
-
-    </section>
-    
-
-<!-- ///////////////////////SKILLS CONTENT////////////////////////////// -->      
-    <section id="secondSection" class="bg-slate-900 p-4">
-
-        <div class="flex justify-center">
-            <h1 class="text-white self-center m-3 text-2xl">SKILLS</h1>
-        </div>
-
-        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 list-none max-sm:h-fit sm:h-fit md:h-full lg:h-[80vh] items-center items-stretch">
-
-            <!-- CARD 1 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/web-development-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">Web Developer</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Building responsive, dynamic websites with clean code and innovative design, 
-                        turning ideas into seamless digital experiences.
-                    </p>
-                </div>
-            </li>
-
-            <!-- CARD 2 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/marketing-specialist-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">Marketing Specialist</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Creating strategic campaigns that drive engagement, boost conversions, and deliver measurable results.
-                    </p>
-                </div>
-            </li>
-
-            <!-- CARD 3 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/FB-ads-manager-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">FB Ads Manager</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Optimizing Facebook advertising to maximize reach, generate leads, and grow brand visibility with precision targeting.
-                    </p>
-                </div>
-            </li>
-
-            <!-- CARD 4 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/crm-manager-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">CRM Manager</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Streamlining customer relationships through effective CRM strategies, ensuring smooth communication and long-term client retention.
-                    </p>
-                </div>
-            </li>
-
-            <!-- CARD 5 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/automation-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">Automation Expert</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Developing efficient workflows and systems to reduce manual tasks, increase productivity, and ensure seamless operations. (GHL/Make/Zapier)
-                    </p>
-                </div>
-            </li>
-
-            <!-- CARD 6 -->
-            <li class="bg-slate-50 rounded-lg shadow-xl p-4 mx-10">
-                <div class="grid grid-cols-1 place-items-center text-center">
-                    <img  style="margin: 0 auto;" src="./src/assets/UI-UX-design-icon.png" alt="" class="w-16 h-16">
-                    <h1 class="text-lg font-semibold mt-2" style="margin: 0 auto;">UI/UX Designer</h1>
-                    <p style="text-align: center;" class="text-sm text-gray-600 mt-1">
-                        Designing intuitive and engaging interfaces that enhance user satisfaction and deliver exceptional digital journeys.
-                    </p>
-                </div>
-            </li>
-
-
-        </ul>
-    </section>
-
-    <!-- ///////////////////////WORK EXPERIENCE////////////////////////////// -->
-
-    <section id="thirdSection"  class="bg-slate-50 p-4 h-full">
-            <h1 class="text-lg font-extrabold" >Work Experience</h1>
-        
-    
-        <div class="grid grid-cols-2">   
-                <div class="bg-slate-50 p-4 text-white">
-                    <img src="./src/assets/work stock.png" alt="">
-                </div>
-                <div class="bg-slate-900 p-4 text-white">
-                    <div class="grid grid:cols-1">
-
-                        <div class="container">
-                            <h1>Web Developer</h1>
-                        <p>Nyx Virtual Solution - Web Developer <br> July 2024 - July 2025
-                        </p>
-                        <li>Designed and implemented engaging web applications with a focus on user-centric design.</li>
-                        </div>
-                        <!-- ///////// -->
-                        <div class="container">
-                            <h1>IT Support</h1>
-                        <p>Barangay Hall, Barangay Maao - IT Support <br> February 2024 - May 2024
-                        </p>
-                        <li>Provided technical assistance to end-users, resolving issues related to hardware and software.</li>
-                        </div>
-
-                        
-                    </div>
-                </div>
-        </div>
-
-    </section>
-
-
-    <!-- //////////////////EDUCATION SECTION///////////////////// -->
-        <section id="fourthSection"  class="bg-slate-900">
-
-            <h1 class="text-white">EDUCATION</h1>
-
-
-            <div class="grid place-items-center h-screen">
-                <!-- white box -->
-                <div class="grid grid-cols-1 bg-white h shadow-md rounded-sm w-4/5 h-3/5 opacity-">
-                    
-                    <!--container 1  -->
-                <div class="flex">
-                    <img class="h-10" src="./src/assets/scholarship.png" alt="file not found">
-                    <ul class="list-none">
-                        <li>
-                            <p>Ramon Torres Louisiana National High School</p>
-                        </li>
-                        <li>
-                            <p> i-Tech Computer Education Bago City Inc.</p>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <!-- container -->
-                <div class="flex">
-                    <img class="h-10" src="./src/assets/badge.png" alt="file not found">
-                    <ul class="list-none">
-                        <li>
-                            <p>Certification</p>
-                        </li>
-                        <li>
-                            <p>NC III in Computer Programming</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- ///////////////////CONTACT//////////////////// -->
-
-    <section id="fifthSection"  class="h-screen grid grid:cols-2 gap-6">
-
-        <div class="bg-green-500">Test</div>
-        <div class="bg-green-500">Test</div>
-
-    </section>
-
-<!-- //////////////////FOOTER///////////////////////// -->
-    <footer class="bg-slate-900">
-        <div class="bg-slate-900">
-            <div class=" flex justify-center">
-                <img src="./src/assets/facebook-logo.png" alt="missing file">
-                <p class="text-white">PAUL JHON MAGBANUA</p>
-
-                <img src="./src/assets/instagram-logo.png" alt="missing file">
-                <p class="text-white">@ilv_polks</p>
-
-                <img src="./src/assets/github-logo-white.png" alt="missing file">
-                <p class=" text-white">peps778</p>
-            </div>
-
-            <div class=" flex text-white">
-                <img src="./src/assets/website-logo.png" alt="file not found">
-                <p>https//:magbanua-pauljhon.website</p>
-            </div>
-
-
-            <div class="bg-slate-900">
-                <p class="text-lg text-white"><i>for inquiries, email me at: magbanuatx56@gmail.com</i></p> <br>
-                <p class="text-white"><i>© 2025 Paul Jhon Magbanua. All rights reserved</i></p>
-            </div>
-        </div>
-    </footer>
-</body> 
+      </div>
+</body>
 </html>
