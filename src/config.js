@@ -42,6 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+fetch("./src/config.php") 
+  .then(response => response.json())
+  .then(data => {
+    Email.send({
+      SecureToken: data.token,
+      To: "recipient@example.com",
+      From: "your-email@example.com",
+      Subject: "Test Email",
+      Body: "This is a test email from SMTPJS."
+    }).then(message => alert(message));
+  })
+  .catch(error => console.error("Error fetching token:", error));
+
 
 
 
