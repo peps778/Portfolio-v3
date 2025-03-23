@@ -40,11 +40,49 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// anti inspect 
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+            event.preventDefault();
+        }
+    });
 
 
 
+// send email
 
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from refreshing the page
+  sendEmail();
+});
 
+function sendEmail() {
+  let name = document.getElementById("nameField").value;
+  let email = document.getElementById("emailField").value;
+  let message = document.getElementById("subjectField").value;
+
+  if (!name || !email || !message) {
+      alert("Please fill out all fields!");
+      return;
+  }
+
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "work.paulmagbanua@gmail.com",
+    Password: "CFBED23B17EBA67DD7CE9B3DB14BF68E9EEA",  
+    To: "work.paulmagbanua@gmail.com",
+    From: "work.paulmagbanua@gmail.com", 
+      Subject: "New Contact Form Submission",
+      Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
+  }).then(response => {
+      alert("Message Sent Successfully!");
+      document.getElementById("contactForm").reset(); // Clear the form
+  }).catch(error => {
+      alert("Error sending email: " + error);
+  });
+}
 
 
 
