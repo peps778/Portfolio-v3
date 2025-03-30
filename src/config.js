@@ -1,19 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector('[data-collapse-toggle="navbar-default"]');
-    const menu = document.getElementById("navbar-default");
+  const toggleButton = document.querySelector('[data-collapse-toggle="navbar-default"]');
+  const menu = document.getElementById("navbar-default");
 
-    toggleButton.addEventListener("click", function () {
-        menu.classList.toggle("hidden");
-    });
-});
+  toggleButton.addEventListener("click", function () {
+    menu.classList.toggle("hidden");
+  });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section"); // Select all sections
-  const navLinks = document.querySelectorAll("nav ul li a"); // Select all nav links
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
 
   function updateActiveLink() {
-    let scrollPos = window.scrollY + 100; // Adjust to detect section correctly
+    let scrollPos = window.scrollY + 100;
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
@@ -22,15 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
         navLinks.forEach((link) => {
-          link.classList.remove("bg-blue-700", "text-white", "lg:text-blue-700"); // Remove all active styles
-          link.removeAttribute("aria-current"); // Remove aria-current
+          link.classList.remove("text-blue-700");
+          link.removeAttribute("aria-current");
         });
 
-        // Highlight the active section link
-        let activeLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
+        const activeLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
         if (activeLink) {
-          activeLink.classList.add("text-white", "bg-blue-700", "lg:text-blue-700"); // Apply text color for lg+
-          activeLink.setAttribute("aria-current", "page"); // Set aria-current
+          activeLink.classList.add("text-blue-700");
+          activeLink.setAttribute("aria-current", "page");
         }
       }
     });
@@ -39,22 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateActiveLink);
 });
 
-
-// anti inspect 
-
-document.addEventListener("contextmenu", (event) => event.preventDefault());
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
-            event.preventDefault();
-        }
-    });
-
-
-
-// send email
+// Prevent form from refreshing the page and send email
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent form from refreshing the page
+  event.preventDefault();
   sendEmail();
 });
 
@@ -64,8 +48,8 @@ function sendEmail() {
   let message = document.getElementById("subjectField").value;
 
   if (!name || !email || !message) {
-      alert("Please fill out all fields!");
-      return;
+    alert("Please fill out all fields!");
+    return;
   }
 
   Email.send({
@@ -74,18 +58,20 @@ function sendEmail() {
     Password: "CFBED23B17EBA67DD7CE9B3DB14BF68E9EEA",  
     To: "work.paulmagbanua@gmail.com",
     From: "work.paulmagbanua@gmail.com", 
-      Subject: "New Contact Form Submission",
-      Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
+    Subject: "New Contact Form Submission",
+    Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
   }).then(response => {
-      alert("Message Sent Successfully!");
-      document.getElementById("contactForm").reset(); // Clear the form
+    alert("Message Sent Successfully!");
+    document.getElementById("contactForm").reset();
   }).catch(error => {
-      alert("Error sending email: " + error);
+    alert("Error sending email: " + error);
   });
 }
 
-
-
-
-
-  
+// Optional: Disable context menu and prevent inspect tool usage
+// document.addEventListener("contextmenu", (event) => event.preventDefault());
+// document.addEventListener("keydown", (event) => {
+//   if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+//     event.preventDefault();
+//   }
+// });
