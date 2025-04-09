@@ -77,7 +77,3 @@ function sendEmail() {
 // });
 
 
-// Download
-document.getElementById("downloadBtn").addEventListener("click", function () {
-  alert("Your CV download will start shortly!");
-});
