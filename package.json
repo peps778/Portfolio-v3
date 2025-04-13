@@ -1,0 +1,15 @@
+{
+    "name": "portfolio-v3",
+    "version": "1.0.0",
+    "description": "My Portfolio Website with BrowserSync",
+    "main": "index.html",
+    "scripts": {
+      "start": "browser-sync start --server --files \"*.html, css/*.css, js/*.js\""
+    },
+    "author": "Paul Jhon Magbanua",
+    "license": "MIT",
+    "devDependencies": {
+      "browser-sync": "^2.29.3"
+    }
+  }
+  

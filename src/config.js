@@ -141,11 +141,20 @@ cards.forEach((card, index) => {
 
   container.appendChild(li);
 
-  console.log("test");
-});
-
-
 
 });
 
 
+
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
