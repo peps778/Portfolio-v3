@@ -9,12 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
+
+    <!-- Load EmailJS SDK -->
+<script type="text/javascript">
+  (function(){
+    emailjs.init("Pcbt1lW4F8M8XgCvR");
+  })();
+</script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="./src/script.js"></script>
     <!-- SEO -->
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="./src/config.js" defer></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script href="./cards.js" defer></script>
+    <script src="./src/email.js"></script>
+
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
 
     <title>Paul Jhon Magbanua</title>
 </head>
@@ -255,57 +269,69 @@
 
     <!-- contact -->
 
-    <section id="fifthSection" class="bg-[#f9f9f9] grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1 max-sm:h-fit sm:h-fit md:h-fit lg:h-screen">
+  <!-- Section: Contact Form -->
+<section id="fifthSection" class="bg-[#f9f9f9] grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1 max-sm:h-fit sm:h-fit md:h-fit lg:h-screen">
+  <div class="grid grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1">
+    <div class="lg:ml-25 lg:h-fit lg:mt-15">
+      <img class="max-sm:w-90 max-sm:mt-10 max-sm:ml-auto lg:w-80 mx-auto" src="./src/assets/contact-me.png" alt="file missing" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+      <h1 class="whitespace-nowrap max-sm:text-3xl lg:text-5xl font-bold mx-10 text-gray-900">
+        Let’s Build Something <span class="block">Amazing!</span>
+      </h1>
+      <br>
+      <p class="max-sm:text-1xl lg:text-xl mx-10 text-gray-800">
+        Looking for a skilled web developer to bring your ideas to life? I specialize in crafting modern, responsive, and high-performance websites. Whether it’s a portfolio, business site, or a custom web app, I’m here to help!
+      </p>
+    </div>
+  </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1">
-            
-            <div class="lg:ml-25 lg:h-fit lg:mt-15">
-                <img class="max-sm:w-90 max-sm:mt-10 max-sm:ml-auto lg:w-80 mx-auto" src="./src/assets/contact-me.png" alt="file missing" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-                <h1 class="whitespace-nowrap max-sm:text-3xl lg:text-5xl font-bold mx-10 text-gray-900">
-                    Let’s Build Something <span class="block">Amazing!</span>
-                </h1>
-                <br>
-                <p class="max-sm:text-1xl lg:text-xl mx-10 text-gray-800">
-                    Looking for a skilled web developer to bring your ideas to life? I specialize in crafting modern, responsive, and high-performance websites. Whether it’s a portfolio, business site, or a custom web app, I’m here to help!
-                </p>
-            </div>
-        </div>
-        
-        <div class=" flex items-center justify-center">
-            
-            <div class="bg-gradient-to-b from-[#0A0C1C] to-[#1E2235] w-full max-w-md max-sm:w-80 sm:w-80 md:w-96 lg:w-[57rem] py-8 mb-10 px-6 sm:px-10 rounded-2xl shadow-lg mt-10 sm:mx-5" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-                <h2 class="text-[#f5f5f5] max-sm:text-2xl lg:text-4xl font-bold text-center mb-6">Contact Me!</h2>
-                
-                <form class="space-y-5" id="contactForm">
-                  <!-- Name Input -->
-                  <input id="nameField" type="text" placeholder="Your Name" class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-                  
-                  <!-- Phone with Country Code -->
-                  <div class="flex">
-                    <select id="countryCode" class="p-4 bg-gray-800 text-white rounded-l-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-                      <option value="+1">+1 (US)</option>
-                      <option value="+63">+63 (PH)</option>
-                      <option value="+44">+44 (UK)</option>
-                      <option value="+91">+91 (IN)</option>
-                    </select>
-                    <input id="phoneField" type="tel" placeholder="123-456-7890" class="w-full p-4 bg-gray-800 text-white rounded-r-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-                  </div>
-                  
-                  <!-- Email Input -->
-                  <input id="emailField" type="email" required placeholder="mail@site.com" class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-                  
-                  <!-- Message Input -->
-                  <textarea id="subjectField" placeholder="Your Message" rows="4" class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
-                  
-                  <!-- Submit Button -->
-                  <button type="submit" class="w-full p-4 bg-blue-700 text-white font-bold rounded-xl shadow-md hover:bg-blue-400 transition-all duration-300">Send</button>
-                </form>
-              </div>
-                  
-            </div>
-        </div>
+  <div class="flex items-center justify-center">
+    <div class="bg-gradient-to-b from-[#0A0C1C] to-[#1E2235] w-full max-w-md max-sm:w-80 sm:w-80 md:w-96 lg:w-[57rem] py-8 mb-10 px-6 sm:px-10 rounded-2xl shadow-lg mt-10 sm:mx-5" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+      <h2 class="text-[#f5f5f5] max-sm:text-2xl lg:text-4xl font-bold text-center mb-6">Contact Me!</h2>
 
-    </section>
+      <form class="space-y-5" id="contactForm" onsubmit="sendMail(event)">
+        <input id="nameField" type="text" placeholder="Your Name" required
+          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+      
+        <div class="flex">
+          <select id="countryCode"
+            class="p-4 bg-gray-800 text-white rounded-l-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+            <option value="+1">+1 (US)</option>
+            <option value="+63">+63 (PH)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+91">+91 (IN)</option>
+          </select>
+          <input id="phoneField" type="tel" placeholder="123-456-7890" required
+            class="w-full p-4 bg-gray-800 text-white rounded-r-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+        </div>
+      
+        <input id="emailField" type="email" placeholder="mail@site.com" required
+          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+      
+        <textarea id="subjectField" placeholder="Your Message" rows="4" required
+          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
+      
+        <button type="submit" id="submitBtn"
+          class="w-full p-4 bg-blue-700 text-white font-bold rounded-xl shadow-md hover:bg-blue-400 transition-all duration-300 flex justify-center items-center gap-2">
+          <svg id="spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span id="btnText">Send</span>
+        </button>
+      </form>
+      
+      
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS Integration -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
 
 <!-- footer  -->
      <footer class="bg-[#020618] h-full">
@@ -375,6 +401,5 @@
         </div>
         
     </footer> 
-
 </body> 
 </html>
