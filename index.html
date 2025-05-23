@@ -70,246 +70,226 @@
   
 
     <!-- Hero Section -->
-    <section id="hero" class="grid grid-cols-1 md:grid-cols-2 content-evenly lg:h-screen md:h-scren max-sm:h-fit bg-[#f9f9f9]">
+ <!-- Hero Section -->
+<section id="hero" class="bg-[#f9f9f9] py-35">
+  <div class="max-w-7xl mx-auto px-6">
 
-        <!-- TEXT BOX (Will be below image on mobile, left on desktop) -->
-        <div class="text-black flex items-center justify-center  max-sm:order-2 sm:order-2 md:order-2 lg:order-1">
-            <div class="max-sm:mx-5 sm:mx-5 md:mx-10 lg:ml-30"> 
-                <h1 class="font-bold max-sm:text-6xl sm:text-7xl md:text-8xl lg:text-8xl text-gray-900">
-                    Hi, I’m Paul
-                </h1>
-                <h4 class="font-bold max-sm:text-2xl sm:text-3xl md:text-3xl lg:text-4xl mt-4 text-gray-800">
-                    Web Developer | CRM Manager | Marketing Specialist
-                </h4>
-                <p class="max-sm:text-1xl sm:text-2xl md:text-2xl lg:text-2 xl mt-4 text-gray-800">
-                    Passionate about crafting innovative web solutions and delivering seamless user experiences. With a solid background in web development and technical support, I thrive on transforming ideas into reality. Let’s build something amazing together!
-                </p>
+    <!-- Row -->
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
 
-                <button class="bg-slate-800 hover:bg-slate-500 py-2 px-3 rounded-lg my-4 flex items-center justify-center">
-                    <a class="text-white text-center" href="./src/Paul-Magbanua.pdf" download id="downloadBtn">Download My CV!</a>
-                </button>
-            </div>
-        </div>
-     
-        <!-- IMAGE BOX (Will be on top in mobile, right on desktop) -->
-        <div class=" text-white flex items-center justify-center ma x-sm:order-1 sm:order-1 md:order-2 lg:order-2">
-  
-           <div>
-            <img src="./src/assets/final-pfp-removebg.png" class="" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-           </div>
-        </div>
+      <!-- Column 1: Text Content -->
+      <div class="max-sm:order-2 sm:order-2 md:order-2 lg:order-1">
+        <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight">
+          Hi, I’m Paul
+        </h1>
+        <h4 class="font-semibold text-xl md:text-2xl lg:text-3xl mt-4 text-gray-800">
+          Web Developer | CRM Manager | Marketing Specialist
+        </h4>
+        <p class="text-lg mt-4 text-gray-700 max-w-xl">
+          Passionate about crafting innovative web solutions and delivering seamless user experiences. With a solid background in web development and technical support, I thrive on transforming ideas into reality. Let’s build something amazing together!
+        </p>
+        <a href="./src/Paul-Magbanua.pdf" download class="inline-block bg-slate-800 hover:bg-slate-600 text-white py-3 px-6 rounded-lg mt-6">
+          Download My CV!
+        </a>
+      </div>
 
-    </section>
+      <!-- Column 2: Image -->
+      <div class="flex justify-center md:justify-end ma x-sm:order-1 sm:order-1 md:order-2 lg:order-2">
+        <img src="./src/assets/final-pfp-removebg.png" alt="Paul" class="w-full max-w-xs md:max-w-md drop-shadow-lg">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="secondSection" class="bg-slate-900 py-16 px-4 h-fit">
+  <div class="max-w-7xl mx-auto">
     
+    <!-- Section Header -->
+    <div class="flex justify-center items-center mb-10">
+      <hr class="w-[40%] h-[1px] bg-slate-50 border-0 rounded-sm" />
+      <h1 class="text-[#f5f5f5] font-bold italic text-2xl sm:text-3xl lg:text-4xl px-4">SKILLS</h1>
+      <hr class="w-[40%] h-[1px] bg-slate-50 border-0 rounded-sm" />
+    </div>
 
-<!-- js cards -->      
-    <section id="secondSection" class="bg-slate-900 px-4 pb-20 pt-10 h-fit">
+    <!-- Card Grid -->
+    <ul id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 list-none">
+      <!-- Cards will be dynamically rendered here -->
+    </ul>
+    
+  </div>
+</section>
 
-        <div class="flex justify-center">
-            <hr class="w-[40%] h-[0.5px] mx-auto mt-10 my-4 bg-slate-50 border-0 rounded-sm md:my-10 dark:bg-slate-50">
-            <h1 class="text-[#f5f5f5] font-bold self-center pb-10 mx-5 my-5 italic max-sm:text-2xl lg:text-4xl">SKILLS</h1>
-            <hr class="w-[40%] h-[0.5px] mx-auto mt-10 my-4 bg-slate-50 border-0 rounded-sm md:my-10 dark:bg-slate-50">
-
-        </div>
-
-        <ul id="card-container" class="grid grid-cols-1 max-sm:mx-6 sm:mx-6 md:mx-6 lg:mx-3 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 list-none max-sm:h-fit sm:h-fit md:h-full lg:h-fit items-center items-stretch" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-            <!-- Cards will be rendered here -->
-          </ul>
-          
-       
-
-          
-    </section>
 
     <!-- work experience -->
 
-    <section id="thirdSection"  class="bg-[#f9f9f9] p-4 h-fit">
-      <h1 class="max-sm:text-2xl sm:text-2xl md:text-2xl lg:text-4xl italic font-bold pt-5 mb-2 text-center text-gray-800">
-        Work Experience
-      </h1>
-      <hr class="lg:w-[15%] max-sm:w-[60%] h-[2px] mx-auto bg-slate-900 border-0 rounded-sm mt-2 mb-10 dark:bg-slate-900">
-      
-      
-      
-        
+    <section id="thirdSection" class="bg-[#f9f9f9] px-4 py-12 h-fit">
+      <div class="max-w-7xl mx-auto">
     
-        <div class="grid grid-cols-2 max-sm:grid-cols-1">   
-                <div class="bg-slate-50 p-4 text-white">
-                    <img src="./src/assets/ghibli-remove-bg.png" alt="" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-                </div>
-                <div class=" rounded-lg bg-slate-900 p-4 text-[#f5f5f5] h-fit">
-                    <div class="grid grid:cols-1">
-
-                        <!-- Experience 1 -->
-                    <div class="container text-base md:text-lg lg:text-xl">
-                      <p class="font-bold">
-                        Nyx Virtual Solution - Web Developer<br> July 2024 - July 2025
-                      </p>
-                      <li class="mb-5 italic max-sm:not-italic">
-                        Designed and implemented engaging web applications with a focus on user-centric design.
-                      </li>
-                    </div>
-
-                    <!-- Experience 2 -->
-                    <div class="container text-base md:text-lg lg:text-xl">
-                      <p class="font-bold">
-                        Barangay Hall, Barangay Maao - IT Support <br> February 2024 - May 2024
-                      </p>
-                      <li class="italic max-sm:not-italic">
-                        Provided technical assistance to end-users, resolving issues related to hardware and software.
-                      </li>
-                    </div>
-
-
-                        
-                    </div>
-                </div>
+        <!-- Section Header -->
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl italic font-bold text-center text-gray-800 mb-2">
+          Work Experience
+        </h1>
+        <hr class="lg:w-[15%] w-[60%] h-[2px] mx-auto bg-slate-900 border-0 rounded-sm mb-10" />
+    
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    
+          <!-- Image Section -->
+          <div class="bg-slate-50 rounded-lg p-4">
+            <img src="./src/assets/ghibli-remove-bg.png" alt="Experience Visual" class="w-full object-contain" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+          </div>
+    
+          <!-- Experience Text -->
+          <div class="bg-slate-900 text-[#f5f5f5] rounded-lg p-6 space-y-6">
+            <!-- Experience 1 -->
+            <div class="text-base md:text-lg lg:text-xl">
+              <p class="font-bold">
+                Nyx Virtual Solution - Web Developer<br> 
+                <span class="text-sm font-normal">July 2024 - July 2025</span>
+              </p>
+              <li class="italic mt-1 max-sm:not-italic">
+                Designed and implemented engaging web applications with a focus on user-centric design.
+              </li>
+            </div>
+    
+            <!-- Experience 2 -->
+            <div class="text-base md:text-lg lg:text-xl">
+              <p class="font-bold">
+                Barangay Hall, Barangay Maao - IT Support<br> 
+                <span class="text-sm font-normal">February 2024 - May 2024</span>
+              </p>
+              <li class="italic mt-1 max-sm:not-italic">
+                Provided technical assistance to end-users, resolving issues related to hardware and software.
+              </li>
+            </div>
+          </div>
+    
         </div>
-
+      </div>
     </section>
+    
 
 
     <!-- education section -->
-        <section id="fourthSection"  class="bg-slate-900 h-fit pb-15 pt-5">
-
-          <h1 class="max-sm:text-2xl sm:text-2xl md:text-2xl lg:text-4xl italic font-bold pt-5 mb-2 text-center text-[#f5f5f5]">
-            Education
-          </h1>
-          <hr class="lg:w-[10%] max-sm:w-[15%] max-sm:w-[60%] h-[1px] mx-auto bg-slate-50 border-0 rounded-sm mt-2 mb-10">
-
-            <!-- container of education -->
-            <div class="mx-10 max-sm:text-1xl sm:text-2xl md:text-2xl lg:text-3xl w-fit lg:mx-auto lg:mb-30">
-              <ul class="list-none ml-15 text-[#f5f5f5]">
-                <li class="mb-4 flex items-start">
-                  <i class="fas fa-graduation-cap text-blue-400 mr-2 mt-1"></i>
-                  Ramon Torres Louisiana National High School
-                </li>
-                <li class="mb-4 flex items-start">
-                  <i class="fas fa-graduation-cap text-blue-400 mr-2 mt-1"></i>
-                  i-Tech Computer Education Bago City Inc.
-                </li>
-                <p class="mt-2 mb-2">Another Qualification:</p>
-                <li class="mb-5 flex items-start">
-                    <i class="fas fa-file-alt text-green-400 mr-2 mt-1"></i>
-                    Graduate of NC III in Computer Programming
-                  </li>                  
-              </ul>
-              
-            </div>
-         
-
-<article class="grid max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-
-  <!-- Pagination -->
-            <div class=" w-[90%] mx-auto lg:mx-20 mt-2 mb-10">
-    <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
-
-      <!-- Carousel Wrapper -->
-      <div class="relative w-full aspect-[16/9] md:aspect-[16/9] sm:aspect-[4/3] overflow-hidden" data-carousel-inner>
-        
-        <!-- Slide 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-          <img src="./src/assets/html-cert.jpg" class="object-cover w-full h-full" alt="Slide 1">
-        </div>
-        
-        <!-- Slide 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="./src/assets/css-cert.jpg" class="object-cover w-full h-full" alt="Slide 2">
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="./src/assets/sql-cert.jpg" class="object-cover w-full h-full" alt="Slide 3">
-        </div>
-        
-        <!-- Slide 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="./src/assets/web-design-cert.jpg" class="object-cover w-full h-full" alt="Slide 4">
-        </div>
-      </div>
-      
-      
-
-      <!-- Slider indicators -->
-      <div class="flex absolute bottom-5 left-1/2 z-30 -translate-x-1/2 space-x-2 absolute z-[-1]">
-        <button type="button" data-carousel-slide-to="0" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-400"></button>
-        <button type="button" data-carousel-slide-to="1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-400"></button>
-        <button type="button" data-carousel-slide-to="2" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-400"></button>
-        <button type="button" data-carousel-slide-to="3" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:bg-gray-400"></button>
-      </div>
-
-      <!-- Slider controls -->
-      <button type="button" class="flex absolute top-1/2 left-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition absolute z-[-1]" data-carousel-prev>
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-      <button type="button" class="flex absolute top-1/2 right-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition absolute z-[-1]" data-carousel-next>
-        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
+       <section id="fourthSection" class="bg-slate-900 py-10">
+  <div class="container mx-auto px-4">
+    <!-- Title -->
+    <div class="text-center mb-10">
+      <h1 class="text-2xl lg:text-4xl italic font-bold text-[#f5f5f5]">Education</h1>
+      <hr class="w-[10%] h-[1px] mx-auto bg-slate-50 mt-2 rounded-sm">
     </div>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-             </div>
 
-  <!-- Text Section -->
-            <div class="mt-10 mx-10">
-    <p class="max-sm:text-center sm:text-center md:text-center xl:text-left text-[#f5f5f5] max-sm:text-1xl sm:text-2xl md:text-3xl lg:text-3xl lg:mt-15">
-      I am a multi-skilled and certified professional with diverse local education and online training, ensuring my competence and excellence in various fields.
-    </p>
+    <!-- Two-column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center lg:px-20">
+      <!-- Left: Education list -->
+      <div class="text-[#f5f5f5]">
+        <ul class="text-xl space-y-4">
+          <li class="flex items-start">
+            <i class="fas fa-graduation-cap text-blue-400 mr-2 mt-1"></i>
+            Ramon Torres Louisiana National High School
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-graduation-cap text-blue-400 mr-2 mt-1"></i>
+            i-Tech Computer Education Bago City Inc.
+          </li>
+          <p class="mt-2 font-semibold">Another Qualification:</p>
+          <li class="flex items-start">
+            <i class="fas fa-file-alt text-green-400 mr-2 mt-1"></i>
+            Graduate of NC III in Computer Programming
+          </li>
+        </ul>
+        <p class="mt-6 text-lg lg:text-xl">
+          I am a multi-skilled and certified professional with diverse local education and online training, ensuring my competence in various fields.
+        </p>
+      </div>
+
+      <!-- Right: Carousel -->
+      <div class="w-full">
+        <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
+          <div class="relative w-full aspect-[16/9]" data-carousel-inner>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+              <img src="./src/assets/html-cert.jpg" class="object-cover w-full h-full" alt="HTML Certificate">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./src/assets/css-cert.jpg" class="object-cover w-full h-full" alt="CSS Certificate">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./src/assets/sql-cert.jpg" class="object-cover w-full h-full" alt="SQL Certificate">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="./src/assets/web-design-cert.jpg" class="object-cover w-full h-full" alt="Web Design Certificate">
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button type="button" data-carousel-prev class="absolute top-1/2 left-3 transform -translate-y-1/2 z-10 bg-gray-200/50 p-2 rounded-full hover:bg-gray-300">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button type="button" data-carousel-next class="absolute top-1/2 right-3 transform -translate-y-1/2 z-10 bg-gray-200/50 p-2 rounded-full hover:bg-gray-300">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
-</article>
-
-               
-
-    </section>
+  <!-- Flowbite Carousel Script -->
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</section>
 
 
     <!-- contact -->
 
   <!-- Section: Contact Form -->
-<section id="fifthSection" class="bg-[#f9f9f9] grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1 max-sm:h-fit sm:h-fit md:h-fit lg:h-screen">
-  <div class="grid grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1">
-    <div class="lg:ml-25 lg:h-fit lg:mt-15">
-      <img class="max-sm:w-90 max-sm:mt-10 max-sm:ml-auto lg:w-80 mx-auto" src="./src/assets/contact-me.png" alt="file missing" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-      <h1 class="whitespace-nowrap max-sm:text-3xl lg:text-5xl font-bold mx-10 text-gray-900">
+<section id="fifthSection" class="bg-[#f9f9f9] py-16">
+  <div class="max-w-screen-xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left Content -->
+    <div class="space-y-6 text-center lg:text-left">
+      <img src="./src/assets/contact-me.png" alt="Contact Illustration"
+        class="w-52 sm:w-72 mx-auto lg:mx-0 mb-6" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+      
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">
         Let’s Build Something <span class="block">Amazing!</span>
       </h1>
-      <br>
-      <p class="max-sm:text-1xl lg:text-xl mx-10 text-gray-800">
+      <p class="text-lg text-gray-800">
         Looking for a skilled web developer to bring your ideas to life? I specialize in crafting modern, responsive, and high-performance websites. Whether it’s a portfolio, business site, or a custom web app, I’m here to help!
       </p>
     </div>
-  </div>
 
-  <div class="flex items-center justify-center">
-    <div class="bg-gradient-to-b from-[#0A0C1C] to-[#1E2235] w-full max-w-md max-sm:w-80 sm:w-80 md:w-96 lg:w-[57rem] py-8 mb-10 px-6 sm:px-10 rounded-2xl shadow-lg mt-10 sm:mx-5" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
-      <h2 class="text-[#f5f5f5] max-sm:text-2xl lg:text-4xl font-bold text-center mb-6">Contact Me!</h2>
-
+    <!-- Right Content - Contact Form -->
+    <div class="bg-gradient-to-b from-[#0A0C1C] to-[#1E2235] w-full max-w-2xl mx-auto p-8 rounded-2xl shadow-lg" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+      <h2 class="text-white text-3xl font-bold text-center mb-6">Contact Me!</h2>
       <form class="space-y-5" id="contactForm" onsubmit="sendMail(event)">
         <input id="nameField" type="text" placeholder="Your Name" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-      
+          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+        
         <div class="flex">
           <select id="countryCode"
-            class="p-4 bg-gray-800 text-white rounded-l-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+            class="p-4 bg-gray-800 text-white rounded-l-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
             <option value="+1">+1 (US)</option>
             <option value="+63">+63 (PH)</option>
             <option value="+44">+44 (UK)</option>
             <option value="+91">+91 (IN)</option>
           </select>
           <input id="phoneField" type="tel" placeholder="123-456-7890" required
-            class="w-full p-4 bg-gray-800 text-white rounded-r-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+            class="w-full p-4 bg-gray-800 text-white rounded-r-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
         </div>
-      
+        
         <input id="emailField" type="email" placeholder="mail@site.com" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-      
+          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+
         <textarea id="subjectField" placeholder="Your Message" rows="4" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl outline-none border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
-      
+          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
+
         <button type="submit" id="submitBtn"
           class="w-full p-4 bg-blue-700 text-white font-bold rounded-xl shadow-md hover:bg-blue-400 transition-all duration-300 flex justify-center items-center gap-2">
           <svg id="spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -321,11 +301,10 @@
           <span id="btnText">Send</span>
         </button>
       </form>
-      
-      
     </div>
   </div>
 </section>
+
 
 <!-- EmailJS Integration -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -334,9 +313,9 @@
 
 
 <!-- footer  -->
-     <footer class="bg-[#020618] h-full">
+     <footer class="bg-[#020618] h-full ">
         
-        <div class="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1 content-center pt-10 h-[50%]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1 content-center pt-10 h-[50%]">
             <!-- col one -->
             <div class="text-white text-center flex flex-col items-center justify-center space-y-2">
               <!-- Code Icon -->
