@@ -39,43 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Prevent form from refreshing the page and send email
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  sendEmail();
-});
-
-function sendEmail() {
-  let name = document.getElementById("nameField").value;
-  let email = document.getElementById("emailField").value;
-  let message = document.getElementById("subjectField").value;
-
-  if (!name || !email || !message) {
-    alert("Please fill out all fields!");
-    return;
-  }
-
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "work.paulmagbanua@gmail.com",
-    Password: "CFBED23B17EBA67DD7CE9B3DB14BF68E9EEA",  
-    To: "work.paulmagbanua@gmail.com",
-    From: "work.paulmagbanua@gmail.com", 
-    Subject: "New Contact Form Submission",
-    Body: `Name: ${name}<br>Email: ${email}<br>Message: ${message}`
-  }).then(response => {
-    alert("Message Sent Successfully!");
-    document.getElementById("contactForm").reset();
-  }).catch(error => {
-    alert("Error sending email: " + error);
-  });
-}
-
-document.addEventListener("contextmenu", (event) => event.preventDefault());
-document.addEventListener("keydown", (event) => {
-  if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
-    event.preventDefault();
-  }
-});
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -156,5 +119,102 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
+  });
+});
+
+// certs 
+
+ document.addEventListener('DOMContentLoaded', function () {
+  const certificates = [
+    { img: "./src/assets/web-design-cert.jpg", alt: "Web Design Certificate" },
+    { img: "./src/assets/css-cert.jpg", alt: "CSS Certificate" },
+    { img: "./src/assets/sql-cert.jpg", alt: "SQL Certificate" },
+    { img: "./src/assets/html-cert.jpg", alt: "HTML Certificate" }
+  ];
+
+  const container = document.getElementById('carousel-container');
+  let currentIndex = 0;
+
+  // Wrapper
+  const wrapper = document.createElement('div');
+  wrapper.className = 'relative overflow-hidden rounded-lg shadow-lg w-full max-w-3xl mx-auto';
+
+  // Track
+  const track = document.createElement('div');
+  track.className = 'flex transition-transform duration-500 ease-in-out';
+  track.id = 'carousel-track';
+
+  // Slides
+  certificates.forEach(cert => {
+    const slide = document.createElement('div');
+    slide.className = 'flex-shrink-0 w-full aspect-[16/9]';
+    
+    const img = document.createElement('img');
+    img.src = cert.img;
+    img.alt = cert.alt;
+    img.className = 'w-full h-full object-cover';
+
+    slide.appendChild(img);
+    track.appendChild(slide);
+  });
+
+  // Buttons
+  const prevBtn = document.createElement('button');
+  prevBtn.innerHTML = `
+    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>`;
+  prevBtn.className = 'absolute top-1/2 left-3 -translate-y-1/2 z-10 bg-white/70 hover:bg-white p-2 rounded-full';
+  
+  const nextBtn = document.createElement('button');
+  nextBtn.innerHTML = `
+    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>`;
+  nextBtn.className = 'absolute top-1/2 right-3 -translate-y-1/2 z-10 bg-white/70 hover:bg-white p-2 rounded-full';
+
+  // Append
+  wrapper.appendChild(track);
+  wrapper.appendChild(prevBtn);
+  wrapper.appendChild(nextBtn);
+  container.appendChild(wrapper);
+
+  // Update function
+  const updateSlide = () => {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  };
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + certificates.length) % certificates.length;
+    updateSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % certificates.length;
+    updateSlide();
+  });
+
+  // Swipe support
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', () => {
+    const delta = endX - startX;
+    if (delta > 50) {
+      currentIndex = (currentIndex - 1 + certificates.length) % certificates.length;
+    } else if (delta < -50) {
+      currentIndex = (currentIndex + 1) % certificates.length;
+    }
+    updateSlide();
+    startX = 0;
+    endX = 0;
   });
 });
