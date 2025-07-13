@@ -45,37 +45,31 @@ const spinner = document.getElementById("spinner");
 
 let downloaded = false;
 
-downloadBtn.addEventListener("click", async (e) => {
-  if (downloaded) {
-    e.preventDefault();
-    return;
-  }
+downloadBtn.addEventListener("click", () => {
+  if (downloaded) return;
 
-  e.preventDefault();
+  const confirmDownload = confirm("Are you sure you want to download this file?");
+  if (!confirmDownload) return;
 
-  const confirmed = confirm("Are you sure you want to download this file?");
-  if (!confirmed) return;
-
-  // Show spinner and change text
+  // Show spinner
   spinner.classList.remove("hidden");
   btnText.textContent = "Downloading...";
 
-  // Simulate a brief delay before downloading
+  // Simulate delay and trigger download
   setTimeout(() => {
-    // Create a temporary anchor to trigger the download
+    // Trigger the actual download
     const link = document.createElement("a");
-    link.href = downloadBtn.getAttribute("href");
-    link.download = "";
+    link.href = "./src/Paul Jhon Magbanua - CV.pdf";
+    link.download = "Paul Jhon Magbanua - CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    // Disable button and update text
+    // Mark as downloaded
     downloaded = true;
-    downloadBtn.classList.add("opacity-50", "cursor-not-allowed");
-    downloadBtn.removeAttribute("href");
-    downloadBtn.removeAttribute("download");
-    spinner.classList.add("hidden");
     btnText.textContent = "Downloaded";
+    spinner.classList.add("hidden");
+    downloadBtn.classList.add("opacity-50", "cursor-not-allowed");
+    downloadBtn.disabled = true;
   }, 2000);
 });
