@@ -75,23 +75,23 @@
   <div class="max-w-7xl mx-auto px-6">
 
     <!-- Row -->
-    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
       <!-- Column 1: Text Content -->
       <div class="max-sm:order-2 sm:order-2 md:order-2 lg:order-1">
-        <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight">
+        <h1 class="font-bold text-7xl md:text-5xl lg:text-7xl text-gray-900 leading-tight">
           Hi, I’m Paul
         </h1>
-        <h4 class="font-semibold text-xl md:text-2xl lg:text-3xl mt-4 text-gray-800">
+        <h4 class="font-semibold text-3xl md:text-2xl lg:text-3xl mt-4 text-gray-800">
           Web Developer | CRM Manager | Marketing Specialist
         </h4>
-        <p class="text-lg mt-4 text-gray-700 max-w-xl">
+        <p class="text-2xl mb-5  mt-4 text-gray-700 max-w-xl">
           Passionate about crafting innovative web solutions and delivering seamless user experiences. With a solid background in web development and technical support, I thrive on transforming ideas into reality. Let’s build something amazing together!
         </p>
       
         <button
     id="downloadBtn"
-    class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-600 text-white py-3 px-6 rounded-lg mt-6 transition-all duration-300"
+    class="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-600 text-white py-3 px-6 rounded-lg transition-all duration-300"
   >
     <svg
       id="spinner"
@@ -100,22 +100,39 @@
       fill="none"
       viewBox="0 0 24 24"
     >
-      <circle
-        class="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        stroke-width="4"
-      ></circle>
-      <path
-        class="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8v8z"
-      ></path>
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
     </svg>
     <span id="btnText">Download My CV!</span>
   </button>
+  <script>
+  document.getElementById('downloadBtn').addEventListener('click', function () {
+    const button = this;
+    const spinner = document.getElementById('spinner');
+    const btnText = document.getElementById('btnText');
+
+    // Show spinner and update button state
+    spinner.classList.remove('hidden');
+    btnText.textContent = 'Downloading...';
+    button.disabled = true;
+
+    // Simulate downloading
+    const link = document.createElement('a');
+    link.href = 'src/Paul Jhon Magbanua - CV.pdf'; // Path to your CV
+    link.download = 'My-CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Reset button after 2 seconds
+    setTimeout(() => {
+      spinner.classList.add('hidden');
+      btnText.textContent = 'Download My CV!';
+      button.disabled = false;
+    }, 2000);
+  });
+</script>
+
 
       </div>
 
@@ -201,8 +218,8 @@
 
 
     <!-- education section -->
-       <section id="fourthSection" class="bg-slate-900 py-10">
-  <div class="container mx-auto px-4">
+       <section id="fourthSection" class="bg-slate-900">
+  <div class="container mx-auto px-4 py-20">
     <!-- Title -->
     <div class="text-center mb-10">
       <h1 class="text-2xl lg:text-4xl italic font-bold text-[#f5f5f5]">Education</h1>

@@ -43,33 +43,32 @@ const downloadBtn = document.getElementById("downloadBtn");
 const btnText = document.getElementById("btnText");
 const spinner = document.getElementById("spinner");
 
-let downloaded = false;
+let hasDownloaded = false;
 
 downloadBtn.addEventListener("click", () => {
-  if (downloaded) return;
+  if (hasDownloaded) return;
 
-  const confirmDownload = confirm("Are you sure you want to download this file?");
+  const confirmDownload = confirm("Do you want to download this file?");
   if (!confirmDownload) return;
 
   // Show spinner
   spinner.classList.remove("hidden");
   btnText.textContent = "Downloading...";
 
-  // Simulate delay and trigger download
+  // Start download after short delay
   setTimeout(() => {
-    // Trigger the actual download
     const link = document.createElement("a");
-    link.href = "./src/Paul Jhon Magbanua - CV.pdf";
+    link.href = "./src/Paul Jhon Magbanua - CV.pdf"; // Make sure this file path is correct
     link.download = "Paul Jhon Magbanua - CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    // Mark as downloaded
-    downloaded = true;
-    btnText.textContent = "Downloaded";
+    // Disable further downloads
+    hasDownloaded = true;
     spinner.classList.add("hidden");
+    btnText.textContent = "Downloaded";
     downloadBtn.classList.add("opacity-50", "cursor-not-allowed");
     downloadBtn.disabled = true;
-  }, 2000);
+  }, 1500);
 });
