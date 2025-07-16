@@ -290,39 +290,60 @@
     <!-- Right Content - Contact Form -->
     <div class="bg-gradient-to-b from-[#0A0C1C] to-[#1E2235] w-full max-w-2xl mx-auto p-8 rounded-2xl shadow-lg" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
       <h2 class="text-white text-3xl font-bold text-center mb-6">Contact Me!</h2>
-      <form class="space-y-5" id="contactForm" onsubmit="sendMail(event)">
-        <input id="nameField" type="text" placeholder="Your Name" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-        
-        <div class="flex">
-          <select id="countryCode"
-            class="p-4 bg-gray-800 text-white rounded-l-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-            <option value="+1">+1 (US)</option>
-            <option value="+63">+63 (PH)</option>
-            <option value="+44">+44 (UK)</option>
-            <option value="+91">+91 (IN)</option>
-          </select>
-          <input id="phoneField" type="tel" placeholder="123-456-7890" required
-            class="w-full p-4 bg-gray-800 text-white rounded-r-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
-        </div>
-        
-        <input id="emailField" type="email" placeholder="mail@site.com" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+      <form class="space-y-5" action="https://formspree.io/f/movlqkza" method="POST">
+  <input name="name" id="nameField" type="text" placeholder="Your Name" required
+    class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
 
-        <textarea id="subjectField" placeholder="Your Message" rows="4" required
-          class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
+  <div class="flex">
+    <select name="country_code" id="countryCode"
+      class="p-4 bg-gray-800 text-white rounded-l-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+      <option value="+1">+1 (US)</option>
+      <option value="+63">+63 (PH)</option>
+      <option value="+44">+44 (UK)</option>
+      <option value="+91">+91 (IN)</option>
+    </select>
+    <input name="phone" id="phoneField" type="tel" placeholder="123-456-7890" required
+      class="w-full p-4 bg-gray-800 text-white rounded-r-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+  </div>
 
-        <button type="submit" id="submitBtn"
-          class="w-full p-4 bg-blue-700 text-white font-bold rounded-xl shadow-md hover:bg-blue-400 transition-all duration-300 flex justify-center items-center gap-2">
-          <svg id="spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-          </svg>
-          <span id="btnText">Send</span>
-        </button>
-      </form>
+  <input name="email" id="emailField" type="email" placeholder="mail@site.com" required
+    class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]">
+
+  <!-- This hidden field tells Formspree where to send the auto-reply -->
+  <input type="hidden" name="_replyto" id="hiddenReplyField">
+
+  <textarea name="message" id="subjectField" placeholder="Your Message" rows="4" required
+    class="w-full p-4 bg-gray-800 text-white rounded-xl border border-gray-700 focus:ring-2 focus:ring-[#cc906e]"></textarea>
+
+  <button type="submit" id="submitBtn"
+    class="w-full p-4 bg-blue-700 text-white font-bold rounded-xl shadow-md hover:bg-blue-400 transition-all duration-300 flex justify-center items-center gap-2">
+    <svg id="spinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+    </svg>
+    <span id="btnText">Send</span>
+  </button>
+</form>
+
+<script>
+  // Copy email to hidden field so auto-reply works
+  document.getElementById('emailField').addEventListener('input', function () {
+    document.getElementById('hiddenReplyField').value = this.value;
+  });
+
+  // Spinner animation (optional)
+  const form = document.querySelector("form");
+  const btnText = document.getElementById("btnText");
+  const spinner = document.getElementById("spinner");
+
+  form.addEventListener("submit", () => {
+    btnText.textContent = "Sending...";
+    spinner.classList.remove("hidden");
+  });
+</script>
+
     </div>
   </div>
 </section>
