@@ -332,21 +332,100 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("4ook_sAMcVyVtVl_8");
 
+    const countryCode = document.getElementById("countryCode");
+    const phoneField = document.getElementById("phoneField");
+    const btn = document.getElementById("submitBtn");
+    const btnText = document.getElementById("btnText");
+    const spinner = document.getElementById("spinner");
+
+    const phonePlaceholders = {
+      "+1": "123-456-7890",
+      "+63": "912-345-6789",
+      "+44": "7123 456 789",
+      "+91": "91234 56789"
+    };
+
+    const phoneRegex = {
+      "+1": /^\d{3}-\d{3}-\d{4}$/,
+      "+63": /^\d{3}-\d{3}-\d{4}$/,
+      "+44": /^\d{4} \d{3} \d{3}$/,
+      "+91": /^\d{5} \d{5}$/
+    };
+
+    // Cleave.js instance
+    let cleaveInstance;
+
+    function setPhoneFormatter() {
+      const selectedCode = countryCode.value;
+      phoneField.placeholder = phonePlaceholders[selectedCode] || "Enter phone number";
+
+      // Destroy old instance
+      if (cleaveInstance) {
+        cleaveInstance.destroy();
+      }
+
+      // Set new formatting rules
+      switch (selectedCode) {
+        case "+1":
+        case "+63":
+          cleaveInstance = new Cleave(phoneField, {
+            delimiters: ["-", "-"],
+            blocks: [3, 3, 4],
+            numericOnly: true,
+          });
+          break;
+        case "+44":
+          cleaveInstance = new Cleave(phoneField, {
+            delimiters: [" ", " "],
+            blocks: [4, 3, 3],
+            numericOnly: true,
+          });
+          break;
+        case "+91":
+          cleaveInstance = new Cleave(phoneField, {
+            delimiters: [" "],
+            blocks: [5, 5],
+            numericOnly: true,
+          });
+          break;
+        default:
+          cleaveInstance = new Cleave(phoneField, {
+            numericOnly: true
+          });
+      }
+    }
+
+    countryCode.addEventListener("change", setPhoneFormatter);
+    setPhoneFormatter(); // on page load
+
     window.sendMail = function (e) {
       e.preventDefault();
 
-      const btn = document.getElementById("submitBtn");
-      const btnText = document.getElementById("btnText");
-      const spinner = document.getElementById("spinner");
+      const selectedCode = countryCode.value;
+      const phoneValue = phoneField.value.trim();
 
-      // Disable button and show spinner
+      // Validate phone number format
+      const regex = phoneRegex[selectedCode];
+      if (regex && !regex.test(phoneValue)) {
+        Swal.fire({
+          icon: "error",
+          title: "Invalid Phone Format",
+          text: `Please match the format: ${phonePlaceholders[selectedCode]}`,
+        });
+        return;
+      }
+
+      // Show loading state
       btn.disabled = true;
       btnText.textContent = "Sending...";
       spinner.classList.remove("hidden");
@@ -355,12 +434,11 @@
         name: document.getElementById("nameField").value,
         email: document.getElementById("emailField").value,
         message: document.getElementById("subjectField").value,
-        phone: document.getElementById("countryCode").value + " " + document.getElementById("phoneField").value,
+        phone: selectedCode + " " + phoneValue,
       };
 
       emailjs.send("service_figir0n", "template_boc2wna", templateParams)
         .then(() => {
-          // Success alert
           Swal.fire({
             icon: 'success',
             title: 'Message Sent!',
@@ -368,9 +446,9 @@
             confirmButtonColor: '#3085d6',
           });
           document.getElementById("contactForm").reset();
+          setPhoneFormatter(); // reapply input format
         })
         .catch((err) => {
-          // Error alert
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -380,7 +458,6 @@
           console.error("Error sending email:", err);
         })
         .finally(() => {
-          // Reset button
           btn.disabled = false;
           btnText.textContent = "Send";
           spinner.classList.add("hidden");
@@ -388,6 +465,8 @@
     };
   });
 </script>
+
+
 
 
 
